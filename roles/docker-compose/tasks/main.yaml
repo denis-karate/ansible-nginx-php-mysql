@@ -1,0 +1,14 @@
+---
+- name: Copy docker-compose.yml
+  template:
+    src: ../files/docker-compose.yml.j2
+    dest: /home/deniswork/Desktop/project-A/docker-compose.yml
+    owner: deniswork	
+    group: deniswork
+    mode: '0644'
+
+- name: Run docker-compose
+  command: docker-compose up -d --build
+  args:
+    chdir: /home/deniswork/Desktop/project-A/
+

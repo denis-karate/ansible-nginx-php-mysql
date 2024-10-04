@@ -1,0 +1,19 @@
+---
+- name: Create directory for PHP files
+  file:
+    path: /home/deniswork/Desktop/project-A/php/html
+    state: directory
+
+- name: Copy Dockerfile for PHP
+  copy:
+    src: Dockerfile
+    dest: /home/deniswork/Desktop/project-A/php/Dockerfile
+
+- name: Copy PHP files
+  copy:
+    src: ../files/
+    dest: /home/deniswork/Desktop/project-A/php/html
+    owner: www-data
+    group: www-data
+    mode: '0755'
+

@@ -1,0 +1,4 @@
+---
+- name: Create MySQL Docker volume
+  command: docker volume create mysql_data
+

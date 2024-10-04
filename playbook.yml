@@ -1,0 +1,10 @@
+- name: Deploy dockerized web application
+  hosts: webservers
+  remote_user: deniswork
+  become: yes
+  roles:
+    - php
+    - nginx
+    - mysql
+    - docker-compose
+
